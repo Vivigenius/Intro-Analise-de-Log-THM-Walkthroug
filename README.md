@@ -246,8 +246,36 @@ Assinaturas de Ataque Comuns
 Identificar assinaturas de ataque comuns em dados de log é uma maneira eficaz de detectar e responder rapidamente a ameaças. As assinaturas de ataque contêm padrões ou características específicas deixadas para trás por agentes de ameaças. Elas podem incluir infecções por malware, ataques baseados na web ( injeção de SQL , script entre sites, travessia de diretório) e muito mais. Como isso depende inteiramente da superfície de ataque, alguns exemplos de alto nível incluem:
 
 
+Injeção de SQL
+
+A injeção de SQL tenta explorar vulnerabilidades em aplicativos da web que interagem com bancos de dados. Procure por consultas SQL incomuns ou malformadas nos logs do aplicativo ou do banco de dados para identificar padrões comuns de ataque de injeção de SQL .
+
+Consultas SQL suspeitas podem conter caracteres inesperados, como aspas simples ( '), comentários ( --, #), instruções union ( UNION) ou ataques baseados em tempo ( WAITFOR DELAY, SLEEP()). Uma lista útil de payload SQLi para referência pode ser encontrada aqui .
+
+No exemplo abaixo, uma tentativa de injeção de SQL pode ser identificada pela ' UNION SELECTseção do q=parâmetro de consulta. O invasor parece ter escapado da consulta SQL com aspas simples e injetado uma instrução union select para recuperar informações da userstabela no banco de dados. Frequentemente, essa carga útil pode ser codificada por URL, exigindo uma etapa de processamento adicional para identificá-la de forma eficiente.
+
+![image](https://github.com/user-attachments/assets/430e047e-a88f-41d6-b620-e34c2cb94a6f)
+
+
+Script entre sites ( XSS )
+
+
+Explorar vulnerabilidades de script entre sites ( XSS ) permite que invasores injetem scripts maliciosos em páginas da web. Para identificar padrões comuns de ataque XSS , geralmente é útil procurar entradas de log com entrada inesperada ou incomum que incluam tags de script ( <script>) e manipuladores de eventos ( onmouseover, onclick, onerror). Uma lista de payload XSS útil para referência pode ser encontrada aqui .
+
+
+No exemplo  abaixo , uma tentativa de script entre sites pode ser identificada pela <script>alert(1);</script>carga inserida no searchparâmetro, que é um método de teste comum para vulnerabilidades XSS .
+
+![image](https://github.com/user-attachments/assets/81d0185c-8d98-4c1f-9a0c-f85fa0773e6e)
 
 
 
+Travessia de caminho
 
+Explorar vulnerabilidades de travessia de caminho permite que invasores acessem arquivos e diretórios fora da estrutura de diretório pretendida de um aplicativo da web, levando a acesso não autorizado a arquivos ou códigos confidenciais. Para identificar padrões comuns de ataque de travessia, procure por caracteres de sequência de travessia ( ../e ../../) e indicações de acesso a arquivos confidenciais ( /etc/passwd, /etc/shadow). Uma lista útil de payload de travessia de diretório para referência pode ser encontrada aqui .
+
+É importante notar, como nos exemplos acima, que as travessias de diretórios são frequentemente codificadas em URL (ou codificadas em URL dupla) para evitar a detecção por firewalls ou ferramentas de monitoramento. Por isso, %2Ee %2Fsão caracteres codificados em URL úteis para saber, pois se referem a .e /respectivamente.
+
+No exemplo abaixo, uma tentativa de travessia de diretório pode ser identificada pela sequência repetida de ../caracteres, indicando que o invasor está tentando "sair" do diretório da web e acessar o /etc/passwdarquivo confidencial no servidor.
+
+![image](https://github.com/user-attachments/assets/f0f6ad05-4016-4ffd-a9cc-0841c1338499)
 
