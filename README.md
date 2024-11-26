@@ -31,7 +31,7 @@ Há várias razões pelas quais coletar logs e adotar uma estratégia de anális
 •	Threat Hunting: No lado proativo, as equipes de segurança cibernética podem usar logs coletados para pesquisar ativamente ameaças avançadas que podem ter escapado das medidas de segurança tradicionais. Analistas de segurança e Threat Hunters podem analisar logs para procurar padrões incomuns, anomalias e indicadores de comprometimento (IOCs) que podem indicar a presença de um agente de ameaça.
 
 •	Conformidade: As organizações devem frequentemente manter registros detalhados das atividades de seus sistemas para fins regulatórios e de conformidade. A análise regular de logs garante que as organizações possam fornecer relatórios precisos e demonstrar conformidade com regulamentações como GDPR, HIPAA ou PCI DSS .
-Tipos de Logs.
+
 ![image](https://github.com/user-attachments/assets/c8eaaf39-0a84-4ad5-aa3f-c73d21ed4165)
 
 Conforme discutido na sala Introdução aos Logs  , diferentes componentes dentro de um ambiente de computação geram vários tipos de logs, cada um servindo a um propósito distinto. Esses tipos de log incluem, mas não estão limitados a:
@@ -53,5 +53,18 @@ Conforme discutido na sala Introdução aos Logs  , diferentes componentes dentr
 •	Logs do servidor Web: solicitações processadas por servidores Web, incluindo URLs, endereços IP de origem, tipos de solicitação, códigos de resposta e muito mais.
 
 Cada tipo de log apresenta uma perspectiva única sobre as atividades dentro de um ambiente, e analisar esses logs em contexto uns com os outros é crucial para uma investigação eficaz de segurança cibernética e detecção de ameaças.
+
+
+![image](https://github.com/user-attachments/assets/801c81e9-350e-4628-8015-478e3e2ba6b1)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TAREFA 3
+
+Teoria da Investigação
+
+
+
 
 
