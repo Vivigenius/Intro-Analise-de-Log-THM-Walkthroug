@@ -279,3 +279,21 @@ No exemplo abaixo, uma tentativa de travessia de diretório pode ser identificad
 
 ![image](https://github.com/user-attachments/assets/f0f6ad05-4016-4ffd-a9cc-0841c1338499)
 
+
+RESPOSTAS DA TAREFA 4
+![image](https://github.com/user-attachments/assets/6d0b3c6e-ff39-41ef-a016-3a48e9809469)
+EXPLICAÇÃO: /var/log/nginx/access.log é o caminho padrão onde os logs de acesso do Nginx são armazenados no Linux. Esses logs contêm registros das solicitações HTTP feitas ao servidor, sendo também informações sobre clientes que acessaram o site, os recursos solicitados, entre outros dados. Esses logs são para monitorar o desempenho, identificar problemas e detectar acessos maliciosos.
+
+
+![image](https://github.com/user-attachments/assets/5abceac6-a8c9-4499-a4a5-8a0e23492efa)
+Path Traversal uma vulnerabilidade onde o invasor tenta acessar arquivos e diretórios que estão fora da estrutura do diretório pretendida pela aplicação web. O objetivo do ainvasor é usar comandos como %2E%2E%2F (equivalente a ../ codificado em URL) pra subir a árvore de diretórios e acessar informações sensíveis no sistema. Nesse caso específico da pergunta da tarefa, ele está tentando acessar o arquivo /proc/self/environ, que pode conter variáveis do ambiente, incluindo informações sensíveis.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+TAREFA 4
+
+
