@@ -65,6 +65,90 @@ TAREFA 3
 Teoria da Investigação
 
 
+Linha do tempo
+
+Ao conduzir análise de log, criar uma linha do tempo é um aspecto fundamental para entender a sequência de eventos dentro de sistemas, dispositivos e aplicativos. Em um alto nível, uma linha do tempo é uma representação cronológica dos eventos registrados, ordenados com base em sua ocorrência. A capacidade de visualizar uma linha do tempo é uma ferramenta poderosa para contextualizar e compreender os eventos que ocorreram em um período específico.
+
+Em cenários de resposta a incidentes, os cronogramas desempenham um papel crucial na reconstrução de incidentes de segurança. Com um cronograma eficaz, os analistas de segurança podem rastrear a sequência de eventos que levam a um incidente, permitindo que eles identifiquem o ponto inicial de comprometimento e entendam as táticas, técnicas e procedimentos (TTPs) do invasor.
+
+
+Carimbo de data/hora
+
+Na maioria dos casos, os logs normalmente incluem carimbos de data/hora que registram quando um evento ocorreu. Com o potencial de muitos dispositivos, aplicativos e sistemas distribuídos gerando eventos de log individuais em várias regiões, é crucial considerar o fuso horário e o formato de cada log. A conversão de carimbos de data/hora para um fuso horário consistente é necessária para análise precisa de log e correlação entre diferentes fontes de log.
+Muitas soluções de monitoramento de log resolvem esse problema por meio da detecção de fuso horário e configuração automática. O Splunk , por exemplo, detecta e processa automaticamente fusos horários quando os dados são indexados e pesquisados. Independentemente de como o tempo é especificado em eventos de log individuais, os timestamps são convertidos para o horário UNIX e armazenados no _timecampo quando indexados.
+
+Esse timestamp consistente pode então ser convertido para um fuso horário local durante a visualização, o que torna os relatórios e análises mais eficientes. Essa estratégia garante que os analistas possam conduzir investigações precisas e obter insights valiosos de seus dados de log sem intervenção manual.
+
+
+Super Linhas do Tempo
+
+Uma super linha do tempo, também conhecida como linha do tempo consolidada, é um conceito poderoso em análise de log e forense digital. Super linhas do tempo fornecem uma visão abrangente de eventos em diferentes sistemas, dispositivos e aplicativos, permitindo que analistas entendam a sequência de eventos de forma holística. Isso é particularmente útil para investigar incidentes de segurança envolvendo vários componentes ou sistemas.
+
+Super timelines geralmente incluem dados de fontes de log discutidas anteriormente, como logs de sistema, logs de aplicativo, logs de tráfego de rede, logs de firewall e muito mais. Ao combinar essas fontes díspares em uma única timeline, os analistas podem identificar correlações e padrões que precisam ser aparentes ao analisar logs individualmente.
+
+Criar uma linha do tempo consolidada com todas essas informações manualmente levaria tempo e esforço. Você não só teria que registrar carimbos de data/hora para cada arquivo no sistema, mas também precisaria entender os métodos de armazenamento de dados de cada aplicativo. Felizmente, o Plaso (Python Log2Timeline) é uma ferramenta de código aberto criada por Kristinn Gudjonsson e muitos colaboradores que automatiza a criação de linhas do tempo de várias fontes de log. Ele foi projetado especificamente para análise forense digital e de log e pode analisar e processar dados de log de uma ampla gama de fontes para criar uma linha do tempo unificada e cronológica.
+Para saber mais sobre o Plaso e seus recursos, visite a página de documentação oficial aqui .
+
+
+Visualização de dados
+
+Ferramentas de visualização de dados, como Kibana (do Elastic Stack) e Splunk, ajudam a converter dados de log brutos em representações visuais interativas e perspicazes por meio de uma interface de usuário. Ferramentas como essas permitem que analistas de segurança entendam os dados indexados visualizando padrões e anomalias, geralmente em uma visualização gráfica. Várias visualizações, métricas e elementos gráficos podem ser construídos em uma visualização de painel personalizada, permitindo uma visualização abrangente de "painel único" para operações de análise de log.
+![image](https://github.com/user-attachments/assets/e803ac96-5962-4468-8e3e-e321e28d6e03)
+
+
+Para criar visualizações de log eficazes, é essencial primeiro entender os dados (e fontes) que estão sendo coletados e definir objetivos claros para a visualização.
+
+Por exemplo, suponha que o objetivo seja monitorar e detectar padrões de aumento de tentativas de login com falha. Nesse caso, devemos procurar visualizar logs que auditam tentativas de login de um servidor de autenticação ou dispositivo de usuário. Uma boa solução seria criar um gráfico de linhas que exibe a tendência de tentativas de login com falha ao longo do tempo. Para gerenciar a densidade de dados capturados, podemos filtrar a visualização para mostrar os últimos sete dias. Isso nos daria um bom ponto de partida para visualizar o aumento de tentativas com falha e detectar anomalias.
+
+
+Monitoramento e alerta de log
+
+Além da visualização, a implementação de monitoramento e alertas de log eficazes permite que as equipes de segurança identifiquem ameaças proativamente e respondam imediatamente quando um alerta é gerado.
+Muitas soluções SIEM (como Splunk e Elastic Stack) permitem a criação de alertas personalizados com base em métricas obtidas em eventos de log. Eventos que valem a pena criar alertas podem incluir várias tentativas de login com falha, escalonamento de privilégios, acesso a arquivos confidenciais ou outros indicadores de possíveis violações de segurança. Os alertas garantem que as equipes de segurança sejam prontamente notificadas sobre atividades suspeitas que exigem atenção imediata.
+
+Funções e responsabilidades devem ser definidas para procedimentos de escalonamento e notificação durante vários estágios do processo de resposta a incidentes. Procedimentos de escalonamento garantem que os incidentes sejam abordados prontamente e que o pessoal certo seja informado em cada nível de gravidade.
+
+Para um tutorial prático sobre painéis e alertas no Splunk, é recomendável conferir a sala Splunk : Painéis e relatórios !
+
+
+Pesquisa externa e inteligência sobre ameaças
+
+Identificar o que pode ser de interesse para nós na análise de log é essencial. É desafiador analisar um log se não temos certeza do que estamos procurando.
+Primeiro, vamos entender o que é inteligência de ameaça. Em resumo, inteligência de ameaça são pedaços de informação que podem ser atribuídos a um ator malicioso. Exemplos de inteligência de ameaça incluem:
+
+•	Endereços IP
+
+•	Hashes de arquivo
+
+•	Domínios
+
+Ao analisar um arquivo de log, podemos procurar pela presença de inteligência de ameaças. Por exemplo, veja esta entrada do servidor web Apache2 abaixo. Podemos ver que um endereço IP tentou acessar o painel de administração do nosso site.
+![image](https://github.com/user-attachments/assets/3e0690c9-0a1d-4d3d-9eee-18acc74589ba)
+Usando um feed de inteligência de ameaças como o ThreatFox , podemos pesquisar em nossos arquivos de log a presença de agentes maliciosos conhecidos.
+
+![image](https://github.com/user-attachments/assets/962f56ad-84be-4252-8a60-6b5f2cb69ad0)
+![image](https://github.com/user-attachments/assets/2b88cca0-e9cc-4720-897a-91ee98c5d410)
+
+RESPOSTAS DA TAREFA 3
+![image](https://github.com/user-attachments/assets/1ba86877-52dc-4f61-9fa9-d02337f19663)
+EXPLICAÇÃO: Super Timelines se refere a uma linha do tempo consolidada que mostra os eventos de diversos dispositivos, sistemas e aplicativos. Sendo útil pra fornecer uma visão abrangente dos eventos em diferentes sistemas durante uma investigação de segurança.
+
+![image](https://github.com/user-attachments/assets/18137e42-5ce4-4b1e-88a2-642a476ae90c)
+EXPLICAÇÃO: Os valores são hashes de arquivos podem ser usados para comparar com uma base de dados de ameaças conhecidas. Se um hash de um arquivo corresponder a um hash de uma lista de malware, isso pode indicar que o arquivo é malicioso. Portanto, um file hash é um indicador essencial na inteligência de ameaças e em investigações de segurança, ajudando a correlacionar evidências e identificar comportamentos maliciosos de maneira precisa.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TAREFA 4 
+
+
+Engenharia de Detecção
+
+
+
+
+
+
 
 
 
