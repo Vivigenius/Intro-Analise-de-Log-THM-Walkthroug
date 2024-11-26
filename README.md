@@ -145,6 +145,105 @@ TAREFA 4
 Engenharia de Detecção
 
 
+Locais comuns de arquivos de log
+
+Um aspecto crucial da análise de log é entender onde localizar os arquivos de log gerados por vários aplicativos e sistemas. Embora os caminhos dos arquivos de log possam variar devido às configurações do sistema, versões de software e configurações personalizadas, conhecer os locais comuns dos arquivos de log é essencial para uma investigação eficiente e detecção de ameaças.
+
+•	Servidores Web:
+
+•	Nginx:
+
+•	Registros de acesso:/var/log/nginx/access.log
+
+•	Registros de erros:/var/log/nginx/error.log
+
+•	Apache :
+
+•	Registros de acesso:/var/log/apache2/access.log
+
+•	Registros de erros:/var/log/apache2/error.log
+
+•	Bases de dados:
+
+•	MySQL:
+
+•	Registros de erros:/var/log/mysql/error.log
+
+•	PostgreSQL:
+
+•	Registros de erros e atividades:/var/log/postgresql/postgresql-{version}-main.log
+
+•	Aplicações Web:
+
+•	PHP :
+
+•	Registros de erros:/var/log/php/error.log
+
+•	Sistemas operacionais:
+
+•	Linux :
+
+•	Logs gerais do sistema:/var/log/syslog
+
+•	Registros de autenticação:/var/log/auth.log
+
+•	Firewalls e IDS/ IPS :
+
+•	iptables:
+
+•	Registros de firewall :/var/log/iptables.log
+
+•	Snort:
+
+•	Registros do Snort:/var/log/snort/
+
+
+Embora esses sejam caminhos comuns de arquivo de log, é importante observar que os caminhos reais podem diferir com base nas configurações do sistema, versões de software e configurações personalizadas. É recomendável consultar a documentação oficial ou os arquivos de configuração para verificar os caminhos corretos do arquivo de log para garantir análise e investigação precisas.
+
+
+Padrões comuns
+
+Em um contexto de segurança, reconhecer padrões e tendências comuns em dados de log é crucial para identificar potenciais ameaças à segurança. Esses "padrões" se referem aos artefatos identificáveis deixados para trás em logs por agentes de ameaças ou incidentes de segurança cibernética. Felizmente, existem alguns padrões comuns que, se aprendidos, melhorarão suas habilidades de detecção e permitirão que você responda eficientemente a incidentes.
+
+
+Comportamento anormal do usuário
+
+Um dos padrões primários que podem ser identificados está relacionado ao comportamento incomum ou anômalo do usuário. Isso se refere a quaisquer ações ou atividades conduzidas por usuários que se desviem de seu comportamento típico ou esperado.
+
+Para detectar efetivamente o comportamento anômalo do usuário, as organizações podem empregar soluções de análise de log que incorporam mecanismos de detecção e algoritmos de aprendizado de máquina para estabelecer padrões de comportamento normais. Desvios desses padrões ou linhas de base podem então ser alertados como potenciais incidentes de segurança. Alguns exemplos dessas soluções incluem Splunk User Behavior Analytics ( UBA ), IBM QRadar UBA e Azure AD Identity Protection .
+
+Os indicadores específicos podem variar muito dependendo da fonte, mas alguns exemplos que podem ser encontrados em arquivos de log incluem:
+
+•	Várias tentativas de login com falha
+
+•	Um número anormalmente alto de logins com falha em um curto período de tempo pode indicar um ataque de força bruta.
+
+•	Tempos de login incomuns
+
+•	Eventos de login fora dos horários ou padrões de acesso típicos do usuário podem indicar acesso não autorizado ou contas comprometidas.
+
+•	Anomalias geográficas
+
+•	Eventos de login de endereços IP em países que o usuário normalmente não acessa podem indicar possível comprometimento da conta ou atividade suspeita.
+
+•	Além disso, logins simultâneos de diferentes localizações geográficas (ou indicações de viagem impossível) podem sugerir compartilhamento de conta ou acesso não autorizado.
+
+•	Mudanças frequentes de senha
+
+•	Eventos de log que indicam que a senha de um usuário foi alterada com frequência em um curto período podem sugerir uma tentativa de ocultar acesso não autorizado ou assumir o controle de uma conta.
+
+•	Sequências de caracteres de agente de usuário incomuns
+
+•	No contexto de logs de tráfego HTTP , solicitações de usuários com sequências de agentes de usuário incomuns que diferem de seus navegadores típicos podem indicar ataques automatizados ou atividades maliciosas.
+
+•	Por exemplo, por padrão, o scanner Nmap registrará um agente de usuário contendo "Nmap Scripting Engine". A ferramenta de força bruta Hydra , por padrão, incluirá "(Hydra)" em seu agente de usuário. Esses indicadores podem ser úteis em arquivos de log para detectar atividade maliciosa em potencial.
+
+A importância dessas anomalias pode variar muito dependendo do contexto específico e dos sistemas implementados, por isso é essencial ajustar quaisquer mecanismos automatizados de detecção de anomalias para minimizar falsos positivos.
+
+
+Assinaturas de Ataque Comuns
+
+Identificar assinaturas de ataque comuns em dados de log é uma maneira eficaz de detectar e responder rapidamente a ameaças. As assinaturas de ataque contêm padrões ou características específicas deixadas para trás por agentes de ameaças. Elas podem incluir infecções por malware, ataques baseados na web ( injeção de SQL , script entre sites, travessia de diretório) e muito mais. Como isso depende inteiramente da superfície de ataque, alguns exemplos de alto nível incluem:
 
 
 
