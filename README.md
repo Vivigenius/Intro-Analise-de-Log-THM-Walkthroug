@@ -324,8 +324,12 @@ TAREFA 6
 
 
 RESPOSTAS DA TAREFA 6
+
+![image](https://github.com/user-attachments/assets/395e4d76-43f1-4999-b9bd-33fbbb93af29)
+
+EXPLICAÇÃO: utilize o comando cut para extrair o campo desejado que contém as URLs. em seguida usei o parametro -d ' ' define que o delimitador é um espaço, e -f 7 indica que queremos o sétimo campo do log, defini o arquivo que foi feito para a analise, e usei o comando sort para organizar os resultados.
 ![image](https://github.com/user-attachments/assets/8c68ac73-caa4-4098-9bf0-1428cb89380a)
-![image](https://github.com/user-attachments/assets/53f9f430-8c77-42f6-9d62-f37b0c5a1a37)
+Obtivemos a flag usando o comando mencionado. flag=c701d43cc5a3acb9b5b04db7f1be94f6
 ![image](https://github.com/user-attachments/assets/e12065d8-c567-42a4-b19d-9eaa32255d75)
 
 
