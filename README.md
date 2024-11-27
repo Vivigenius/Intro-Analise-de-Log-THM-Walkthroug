@@ -358,7 +358,7 @@ EXPLICAÇÃO: cut -d ' ' -f 1 apache-1691435735822.log extrai o primeiro campo (
 
 
 ![image](https://github.com/user-attachments/assets/de25a6ab-65ca-415f-93e1-a11798659479)
-EXPLICAÇÃO: o comando grep irá procurar a linha correspondente e usando o IP 110.122.65.76 quanto o caminho /login.php. A linha completa é exibida, incluindo o registro de data e hora.
+EXPLICAÇÃO: (esse é o mais simples) usandoo comando grep irá procurar a linha correspondente e usando o IP 110.122.65.76 quanto o caminho /login.php. A linha completa é exibida, incluindo o registro de data e hora.
 ![image](https://github.com/user-attachments/assets/2f4a691b-962a-4da9-948b-a03a262c7094)
 
 
