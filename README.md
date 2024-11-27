@@ -294,6 +294,35 @@ Path Traversal uma vulnerabilidade onde o invasor tenta acessar arquivos e diret
 
 
 
-TAREFA 4
+TAREFA 5
+
+Análise automatizada vs Manual
+
+
+Análise automatizada:
+A análise automatizada envolve o uso de ferramentas. Por exemplo, elas geralmente incluem ferramentas comerciais como XPLG ou SolarWinds Loggly. Ferramentas de análise automatizadas permitem o processamento e a análise de dados de logs. Essas ferramentas geralmente utilizam Inteligência Artificial/Aprendizado de Máquina para analisar padrões e tendências. À medida que o cenário de IA evolui, esperamos ver soluções de análise automatizadas mais eficazes.
+![image](https://github.com/user-attachments/assets/db1971ed-32d6-4b93-924b-cdfa0f55987d)
+
+
+Análise Manual:
+Análise manual é o processo de examinar dados e artefatos sem usar ferramentas de automação. Por exemplo, um analista rolando por um log de servidor web seria considerado análise manual. A análise manual é essencial para um analista porque não se pode confiar em ferramentas de automação.
+![image](https://github.com/user-attachments/assets/8e5d820b-f564-4257-ab71-52979d523652)
+
+
+RESPOSTAS DA TAREFA 5
+![image](https://github.com/user-attachments/assets/a3044a17-223f-40e2-a819-08b6fcec5d51)
+EXPLICAÇÃO: A análise automatizada (automated) envolve o uso de ferramentas que processam os logs e retornam resultados automaticamente. Essas ferramentas geralmente utilizam inteligência artificial ou aprendizado de máquina para identificar padrões e tendências, economizando tempo e esforço manual.
+
+![image](https://github.com/user-attachments/assets/0cf083e0-a462-4f5f-a700-8e7f34cb3d46)
+EXPLICAÇÃO: A análise manual(MANUAL) é realizada diretamente por um analista que examina os logs sem o uso de ferramentas automatizadas. Nesse tipo de análise, o analista procura por eventos específicos, padrões de comportamento ou outras evidências de maneira manual, sendo mais demorado, porém permitindo um exame contextual e detalhado dos registros.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TAREFA 6
+
+
+
 
 
