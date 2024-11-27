@@ -352,8 +352,14 @@ awk '$9 == 200' apache-1691435735822.log: Esse comando usa o awk para verificar 
 
 
 ![image](https://github.com/user-attachments/assets/c518b564-dac7-4663-93b1-de9c9059b732)
-EXPLICAÇÃO: cut -d ' ' -f 1 apache.log extrai o primeiro campo (-f 1), que geralmente é o endereço IP, usando o delimitador de espaço (-d ' '), o paramêtro sort ordena os endereços IPs para que os iguais fiquem agrupados, o parametro uniq -c conta o número de ocorrências de cada endereço IP, o sort -nr cria uma ordem de resultados numéricos em ordem decrescente (-n para numérico e -r para reverso) e o head -1 exibe apenas a primeira linha do resultado, que será o IP que gerou mais tráfego e sua respectiva contagem.
+EXPLICAÇÃO: cut -d ' ' -f 1 apache-1691435735822.log extrai o primeiro campo (-f 1), que geralmente é o endereço IP, usando o delimitador de espaço (-d ' '), o paramêtro sort ordena os endereços IPs para que os iguais fiquem agrupados, o parametro uniq -c conta o número de ocorrências de cada endereço IP, o sort -nr cria uma ordem de resultados numéricos em ordem decrescente (-n para numérico e -r para reverso) e o head -1 exibe apenas a primeira linha do resultado, que será o IP que gerou mais tráfego e sua respectiva contagem.
 ![image](https://github.com/user-attachments/assets/896be716-05f5-4b71-873d-fe1b6e5582e6)
+
+
+
+![image](https://github.com/user-attachments/assets/de25a6ab-65ca-415f-93e1-a11798659479)
+EXPLICAÇÃO: o comando grep irá procurar a linha correspondente e usando o IP 110.122.65.76 quanto o caminho /login.php. A linha completa é exibida, incluindo o registro de data e hora.
+![image](https://github.com/user-attachments/assets/2f4a691b-962a-4da9-948b-a03a262c7094)
 
 
 
