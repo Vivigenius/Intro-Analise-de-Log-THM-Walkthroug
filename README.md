@@ -323,6 +323,11 @@ EXPLICAÇÃO: A análise manual(MANUAL) é realizada diretamente por um analista
 TAREFA 6
 
 
+RESPOSTAS DA TAREFA 6
+![image](https://github.com/user-attachments/assets/8c68ac73-caa4-4098-9bf0-1428cb89380a)
+![image](https://github.com/user-attachments/assets/53f9f430-8c77-42f6-9d62-f37b0c5a1a37)
+![image](https://github.com/user-attachments/assets/e12065d8-c567-42a4-b19d-9eaa32255d75)
+
 
 
 
