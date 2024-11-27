@@ -323,6 +323,10 @@ EXPLICAÇÃO: A análise manual(MANUAL) é realizada diretamente por um analista
 TAREFA 6
 
 
+Ferramentas de análise de log: linha de comando
+
+
+
 RESPOSTAS DA TAREFA 6
 
 ![image](https://github.com/user-attachments/assets/395e4d76-43f1-4999-b9bd-33fbbb93af29)
