@@ -336,14 +336,27 @@ EXPLICAÇÃO: utilize o comando cut para extrair o campo desejado que contém as
 Obtivemos a flag usando o comando mencionado. flag=c701d43cc5a3acb9b5b04db7f1be94f6
 
 
-
 ![image](https://github.com/user-attachments/assets/e12065d8-c567-42a4-b19d-9eaa32255d75)
+
+
+
 
 
 ![image](https://github.com/user-attachments/assets/e7814965-8c88-4b60-9256-0924d5916efa)
 
 awk '$9 == 200' apache-1691435735822.log: Esse comando usa o awk para verificar se o nono campo $9, que geralmente é o código de status HTTP, se é igual a 200. Ele retorna todas as linhas do arquivo apache-1691435735822.log que têm esse código. e o | wc -l: Esse comando conta quantas linhas foram retornadas pelo awk, que corresponde ao número de respostas HTTP 200 no log.
 ![image](https://github.com/user-attachments/assets/3b9c0a63-a62d-40c2-8bf8-6e9fcf1cfb72)
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/c518b564-dac7-4663-93b1-de9c9059b732)
+EXPLICAÇÃO: cut -d ' ' -f 1 apache.log extrai o primeiro campo (-f 1), que geralmente é o endereço IP, usando o delimitador de espaço (-d ' '), o paramêtro sort ordena os endereços IPs para que os iguais fiquem agrupados, o parametro uniq -c conta o número de ocorrências de cada endereço IP, o sort -nr cria uma ordem de resultados numéricos em ordem decrescente (-n para numérico e -r para reverso) e o head -1 exibe apenas a primeira linha do resultado, que será o IP que gerou mais tráfego e sua respectiva contagem.
+![image](https://github.com/user-attachments/assets/896be716-05f5-4b71-873d-fe1b6e5582e6)
+
+
+
 
 
 
