@@ -396,10 +396,13 @@ RESPOSTAS DA TAREFA 8
 EXPLICAÇÃO: Fiz o download do arquivo.zip que foi extraido e fiz o upload do arquivo access.log no CyberChef que utilizei para extrair endereços IP usando uma expressão regular. Eu apliquei a regex \b([0-9]{1,3}\.){3}[0-9]{1,3}\b, que é um padrão para identificar endereços IP.Ao analisar a saída (Output) do CyberChef, é possível ver o endereço IP que começa com "212" sendo o 212.14.17.145.
 ![image](https://github.com/user-attachments/assets/64bec8be-25fe-43e7-8604-a897e2716afc)
 
-
+-----------
 
 ![image](https://github.com/user-attachments/assets/d0b012aa-1165-48df-be70-e76d7bee23ba)
 EXPLICAÇÃO: Primeiro é necessário buscar no log uma socilitação que estava codificado em base64, é necessário utilizar o regex para encontrar padrões especificos, sendo solicitações HTTP GET ou POST, dai encontramos o valor codificado em base64 sendo o VEhNe0NZQkVSQ0hFRl9XSVpBUkR9==. Em seguida copiamos esse valor e  iremos decodifica-los, (sinta-se a vontade para usar o CyberChef também), selecione FROM BASE64 e cole o codigo no input, essa operação transforma o valor codificado em texto legível, então teremos o valor resultante no Output sendo THM{CYBERCHEF_WIZARD}.
+![image](https://github.com/user-attachments/assets/f631a170-be87-45f6-99be-0c4b68b4456e)
+![image](https://github.com/user-attachments/assets/a2f51ff3-5576-44d5-b462-66a55bfecfad)
+
 
 
 
