@@ -398,6 +398,14 @@ EXPLICAÇÃO: Fiz o download do arquivo.zip que foi extraido e fiz o upload do a
 
 
 
+![image](https://github.com/user-attachments/assets/d0b012aa-1165-48df-be70-e76d7bee23ba)
+EXPLICAÇÃO: Primeiro é necessário buscar no log uma socilitação que estava codificado em base64, é necessário utilizar o regex para encontrar padrões especificos, sendo solicitações HTTP GET ou POST, dai encontramos o valor codificado em base64 sendo o VEhNe0NZQkVSQ0hFRl9XSVpBUkR9==. Em seguida copiamos esse valor e  iremos decodifica-los, (sinta-se a vontade para usar o CyberChef também), selecione FROM BASE64 e cole o codigo no input, essa operação transforma o valor codificado em texto legível, então teremos o valor resultante no Output sendo THM{CYBERCHEF_WIZARD}.
+
+
+
+
+
+
 
 
 
