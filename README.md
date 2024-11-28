@@ -366,6 +366,39 @@ EXPLICAÇÃO: (esse é o mais simples) usandoo comando grep irá procurar a linh
 ![image](https://github.com/user-attachments/assets/2f4a691b-962a-4da9-948b-a03a262c7094)
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TAREFA 7 
+
+Ferramentas de análise de log: expressões regulares
+
+
+RESPOSTAS DA TAREFA 7
+![image](https://github.com/user-attachments/assets/940cd82a-0f0f-47c0-9727-e83a5938cd06)
+EXPLICAÇÃO: O paramêtro -E permite o uso de expressões regulares estendidas, a expressão regular 'post=2[2-6]' que busca por IDs entre 22 e 26, pois 2[2-6] indica um valor de "2" seguido de qualquer número entre 2 e 6.
+
+
+![image](https://github.com/user-attachments/assets/3cc89547-69fc-4e43-864f-8c999ba4c4d9)
+EXPLICAÇÃO:  Grok é um plugin utilizado no Logstash para extrair e estruturar dados a partir de logs não estruturados, permitindo definir padrões para capturar diferentes partes dos logs, facilitando a análise e a visualização dos dados no sistema SIEM, como o Elastic Stack.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TAREFA 8
+
+Ferramentas de análise de log: CyberChef
+
+
+RESPOSTAS DA TAREFA 8
+![image](https://github.com/user-attachments/assets/04a07a31-3b54-4f14-9a17-3d958e5fe08c)
+EXPLICAÇÃO: Fiz o download do arquivo.zip que foi extraido e fiz o upload do arquivo access.log no CyberChef que utilizei para extrair endereços IP usando uma expressão regular. Eu apliquei a regex \b([0-9]{1,3}\.){3}[0-9]{1,3}\b, que é um padrão para identificar endereços IP.Ao analisar a saída (Output) do CyberChef, é possível ver o endereço IP que começa com "212" sendo o 212.14.17.145.
+![image](https://github.com/user-attachments/assets/64bec8be-25fe-43e7-8604-a897e2716afc)
+
+
+
+
 
 
 
