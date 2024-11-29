@@ -405,11 +405,84 @@ EXPLICAÇÃO: Primeiro é necessário buscar no log uma socilitação que estava
 
 
 ![image](https://github.com/user-attachments/assets/2dbf67c9-6180-45ec-93dc-29d061b534db)
-EXPLICAÇÃO: Carregue o arquivo "encodedflag.txt" no CyberChef que você baixou junto no arquivo.zip disponibilizado pela tryhackme. Use a operação "From Base64" para decodificar o conteúdo do arquivo, em seguida use uma regex identificar e extrair um endereço MAC no formato desejado como mostrado na imagem abaixo. O valor MAC foi 08-2E-9A-4B-7F-61.
+EXPLICAÇÃO: Carregue o arquivo "encodedflag.txt" no CyberChef que você baixou junto no arquivo.zip disponibilizado pela tryhackme. Use a operação "From Base64" para decodificar o conteúdo do arquivo, em seguida use uma regex identificar e extrair um endereço MAC como mostrado na imagem abaixo. O valor MAC foi 08-2E-9A-4B-7F-61.
 ![image](https://github.com/user-attachments/assets/676f2bc8-821f-41ae-b7e2-e35ba91d4f59)
 
  
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Tarefa 9
+
+
+Ferramentas de análise de log: Yara e Sigma
+
+Sigma é uma ferramenta de código aberto altamente flexível que descreve eventos de log em um formato estruturado. Sigma pode ser usado para encontrar entradas em arquivos de log usando correspondência de padrões. Sigma é usado para:
+
+Detectar eventos em arquivos de log
+Criar pesquisas SIEM
+Identificar ameaças
+O Sigma usa a sintaxe YAML para suas regras. Esta tarefa demonstrará o Sigma sendo usado para detectar eventos de login com falha em SSH. Observe que escrever uma regra Sigma está fora do escopo desta sala. No entanto, vamos dividir um exemplo de regra Sigma para o cenário listado acima:
+
+title: Failed SSH Logins
+description: Searches sshd logs for failed SSH login attempts
+status: experimental
+author: CMNatic
+logsource: 
+    product: linux
+    service: sshd
+
+detection:
+    selection:
+        type: 'sshd'
+        a0|contains: 'Failed'
+        a1|contains: 'Illegal'
+    condition: selection
+falsepositives:
+    - Users forgetting or mistyping their credentials
+level: medium
+Nesta regra Sigma:
+![image](https://github.com/user-attachments/assets/23dfa163-5631-4db8-b8c4-0203e6ed1898)
+
+Esta regra agora pode ser usada em plataformas SIEM para identificar eventos nos logs processados. Se você quiser aprender mais sobre o Sigma, recomendo conferir a sala Sigma  no TryHackMe.
+
+Yara
+
+Yara é outra ferramenta de correspondência de padrões que mantém seu lugar no arsenal de um analista. Yara é uma ferramenta formatada em YAML que identifica informações com base em padrões binários e textuais (como hexadecimal e strings). Embora seja geralmente usada em análise de malware, Yara é extremamente eficaz em análise de log.
+
+Vamos dar uma olhada neste exemplo de regra Yara chamada "IPFinder". Esta regra YARA usa regex para procurar por quaisquer endereços IPV4. Se o arquivo de log que estamos analisando contiver um endereço IP, o YARA o sinalizará:
+
+rule IPFinder {
+    meta:
+        author = "CMNatic"
+    strings:
+        $ip = /([0-9]{1,3}\.){3}[0-9]{1,3}/ wide ascii
+ 
+    condition:
+        $ip
+}
+Vejamos as chaves que compõem esta regra de Yara:
+![image](https://github.com/user-attachments/assets/443ea0b9-99e3-472f-a270-3339ee87de95)
+
+![image](https://github.com/user-attachments/assets/6864fd9c-faa8-4bf9-8193-e9729bb8d9b4)
+
+Esta regra YARA pode ser expandida para procurar:
+
+Vários endereços IP
+Endereços IP baseados em um intervalo (por exemplo, um ASN ou uma sub-rede)
+Endereços IP em HEX
+Se um endereço IP listar mais do que uma certa quantidade (ou seja, alertar se um endereço IP for encontrado cinco vezes)
+E combinado com outras regras. Por exemplo, se um endereço IP visita uma página específica ou realiza uma determinada ação
+Se você quiser saber mais sobre Yara, confira a sala  Yara  no TryHackMe.
+
+
+RESPOSTAS DA TAREFA 9
+![image](https://github.com/user-attachments/assets/f34bda38-aa35-474e-8a08-ed4f366cad7c)
+EXPLICAÇÃO: Ele descreva sua regras e eventos de log
+
+![image](https://github.com/user-attachments/assets/5c768165-e908-4509-83fb-3af480a29377)
+![image](https://github.com/user-attachments/assets/c22ec3e7-8eb1-47d4-9d4e-be4341b76fa7)
 
 
