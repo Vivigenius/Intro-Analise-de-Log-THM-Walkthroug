@@ -486,3 +486,5 @@ EXPLICAÇÃO: Ele descreva sua regras e eventos de log
 ![image](https://github.com/user-attachments/assets/c22ec3e7-8eb1-47d4-9d4e-be4341b76fa7)
 
 
+--------------------------------------
+![image](https://github.com/user-attachments/assets/324d34a5-b3a6-4a5b-9765-e491d41ed5f7)
