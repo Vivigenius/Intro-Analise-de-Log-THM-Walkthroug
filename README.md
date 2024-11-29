@@ -405,24 +405,10 @@ EXPLICAÇÃO: Primeiro é necessário buscar no log uma socilitação que estava
 
 
 ![image](https://github.com/user-attachments/assets/2dbf67c9-6180-45ec-93dc-29d061b534db)
+EXPLICAÇÃO: Carregue o arquivo "encodedflag.txt" no CyberChef que você baixou junto no arquivo.zip disponibilizado pela tryhackme. Use a operação "From Base64" para decodificar o conteúdo do arquivo, em seguida use uma regex identificar e extrair um endereço MAC no formato desejado como mostrado na imagem abaixo. O valor MAC foi 08-2E-9A-4B-7F-61.
+![image](https://github.com/user-attachments/assets/676f2bc8-821f-41ae-b7e2-e35ba91d4f59)
 
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
